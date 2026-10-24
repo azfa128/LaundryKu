@@ -26,5 +26,9 @@ export interface Order {
   status: OrderStatus;
   rejectionReason?: string;
   createdAt: string;
+  paymentProofPath?: string;
+  bagPhotoPath?: string;
+  paymentProofUrl?: string;
+  bagPhotoUrl?: string;
   customer?: Pick<User, 'id' | 'name' | 'phone'>;
 }

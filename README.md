@@ -6,7 +6,7 @@ Aplikasi laundry dengan React 18, Vite, TypeScript, Tailwind CSS, React Router, 
 
 1. Buat project baru di [Supabase](https://supabase.com/dashboard).
 2. Aktifkan penyedia autentikasi Email di **Authentication → Providers**. Atur konfirmasi email sesuai kebijakan project.
-3. Pastikan tabel `profiles`, `orders`, dan `pricing_config` serta kebijakan RLS yang digunakan aplikasi sudah tersedia di project. Aplikasi ini tidak membuat atau mengubah skema tabel.
+3. Pastikan tabel `profiles`, `orders`, dan `pricing_config` serta kebijakan RLS yang digunakan aplikasi sudah tersedia di project.
 4. Salin `.env.example` menjadi `.env.local`, lalu isi URL project dan publishable anon key dari **Project Settings → API**:
 
    ```dotenv
@@ -15,6 +15,7 @@ Aplikasi laundry dengan React 18, Vite, TypeScript, Tailwind CSS, React Router, 
    ```
 
 5. Jalankan isi [`supabase/seed_pricing.sql`](supabase/seed_pricing.sql) di **SQL Editor** untuk memasukkan konfigurasi harga awal. Perintah seed tidak menimpa konfigurasi yang sudah ada.
+6. Jalankan [`supabase/order_attachments.sql`](supabase/order_attachments.sql) di **SQL Editor** untuk menambahkan kolom path bukti pembayaran/foto tas, bucket Storage privat, dan policy upload/baca/hapus file.
 
 Role pengguna dibaca dari `profiles.role`. Pendaftaran mengirim `full_name` dan `phone` pada metadata autentikasi; siapkan mekanisme project yang mengisi baris `profiles` untuk akun baru.
 
