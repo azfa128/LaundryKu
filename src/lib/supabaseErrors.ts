@@ -11,7 +11,13 @@ export function supabaseErrorMessage(error: unknown, fallback: string): string {
   if (/already registered|already exists|user exists|email.*(taken|registered)/.test(normalized)) {
     return 'Email sudah terdaftar. Silakan masuk atau gunakan email lain.';
   }
-  if (/permission denied|row-level security|not authorized|unauthorized|jwt expired/.test(normalized)) {
+  if (/bucket.*(not found|does not exist)|no such bucket/.test(normalized)) {
+    return 'Penyimpanan lampiran belum disiapkan. Jalankan supabase/order_attachments.sql di SQL Editor Supabase.';
+  }
+  if (/row-level security/.test(normalized)) {
+    return 'Upload ditolak oleh aturan akses Storage. Jalankan supabase/order_attachments.sql dan pastikan policy Storage sudah aktif.';
+  }
+  if (/permission denied|not authorized|unauthorized|jwt expired/.test(normalized)) {
     return 'Akses ditolak. Periksa akun dan izin Anda, lalu coba lagi.';
   }
   return fallback;
