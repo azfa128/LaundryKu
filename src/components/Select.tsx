@@ -6,7 +6,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(function Select
   const selectId = id ?? props.name;
   return <label className="block space-y-2 text-sm font-semibold text-ink" htmlFor={selectId}>
     <span>{label}</span>
-    <select ref={ref} id={selectId} className={`w-full rounded-token border bg-white px-4 py-3 outline-none focus:border-ocean ${error ? 'border-red-500' : 'border-line'} ${className}`} aria-invalid={Boolean(error)} {...props}>{children}</select>
+    <select ref={ref} id={selectId} className={`w-full rounded-token border bg-card px-4 py-3 shadow-sm outline-none transition focus:border-ink focus:ring-2 focus:ring-teal/70 ${error ? 'border-red-500' : 'border-line'} ${className}`} aria-invalid={Boolean(error)} {...props}>{children}</select>
     {error && <span role="alert" className="block font-normal text-red-600">{error}</span>}
   </label>;
 });

@@ -41,11 +41,11 @@ export function AdminLoginPage() {
     }
   }
 
-  return <main className="min-h-screen bg-[#F4FAFA] md:flex">
-    <aside className="bg-white p-5 md:min-h-screen md:w-[220px] md:border-r md:border-line">
-      <Link to="/" className="font-heading text-xl font-extrabold text-ocean">◉ LaundryKu</Link>
-      <p className="mt-8 text-xs font-bold uppercase tracking-wide text-muted">Area internal</p>
-      <p className="mt-2 text-sm text-ink">Admin</p>
+  return <main className="min-h-screen bg-ground md:flex">
+    <aside className="bg-sidebar p-5 text-white md:min-h-screen md:w-[220px] md:border-r md:border-line">
+      <Link to="/" className="font-heading text-xl font-extrabold text-teal">◉ LaundryKu</Link>
+      <p className="mt-8 text-xs font-bold uppercase tracking-wide text-white/60">Area internal</p>
+      <p className="mt-2 text-sm text-white/90">Admin</p>
     </aside>
     <section className="flex-1 px-5 py-10 md:px-12 md:py-16">
       <div className="max-w-3xl">
