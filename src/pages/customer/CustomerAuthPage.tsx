@@ -54,15 +54,15 @@ export function CustomerAuthPage() {
     <h1 className="mt-8 font-heading text-2xl font-extrabold text-ink">{isRegister ? 'Buat akun LaundryKu' : 'Selamat datang'}</h1>
     <p className="mt-2 text-sm text-muted">{isRegister ? 'Daftar untuk mulai memesan layanan laundry.' : 'Masuk untuk mengelola pesanan laundry.'}</p>
     <div className="mt-5 flex gap-5 border-b border-line text-xs font-bold uppercase tracking-wide">
-      <Link to="/login" className={`pb-3 ${!isRegister ? 'border-b-2 border-ocean text-ocean' : 'text-muted'}`}>Masuk</Link>
-      <Link to="/daftar" className={`pb-3 ${isRegister ? 'border-b-2 border-ocean text-ocean' : 'text-muted'}`}>Daftar</Link>
+      <Link to="/login" className={`pb-3 transition ${!isRegister ? 'border-b-2 border-teal text-ink' : 'text-muted hover:text-ink'}`}>Masuk</Link>
+      <Link to="/daftar" className={`pb-3 transition ${isRegister ? 'border-b-2 border-teal text-ink' : 'text-muted hover:text-ink'}`}>Daftar</Link>
     </div>
     <form onSubmit={(event) => void handleSubmit(onSubmit)(event)} noValidate className="mt-5 space-y-3">
       {isRegister && <Input label="Nama lengkap" placeholder="Nama Anda" autoComplete="name" error={errors.name?.message} {...register('name')} />}
       {isRegister && <Input label="Nomor WhatsApp" type="tel" placeholder="+62 812-3456-7890" autoComplete="tel" error={errors.phone?.message} {...register('phone')} />}
       <Input label="Email" type="email" placeholder="nama@email.com" autoComplete="email" error={errors.email?.message} {...register('email')} />
       <Input label="Kata sandi" type="password" placeholder="••••••••" autoComplete={isRegister ? 'new-password' : 'current-password'} error={errors.password?.message} {...register('password')} />
-      {serverError && <p role="alert" className="rounded-lg bg-red-50 p-3 text-sm text-red-700">{serverError}</p>}
+      {serverError && <p role="alert" className="rounded-token bg-red-50 p-3 text-sm text-red-700">{serverError}</p>}
       <Button type="submit" disabled={submitting} className="w-full sm:w-auto">{submitting ? 'Memproses...' : isRegister ? 'Daftar' : 'Masuk'}</Button>
     </form>
   </main>;

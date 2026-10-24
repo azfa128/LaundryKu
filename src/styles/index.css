@@ -3,7 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root { font-family: 'DM Sans', sans-serif; color: #14343B; background: #F4FAFA; font-synthesis: none; text-rendering: optimizeLegibility; }
+:root { --color-ink: #1F1F2E; --color-lime: #D6F55F; --color-ground: #F5F5F1; --color-card: #FFFFFF; --color-peach: #FDE3D3; --color-lavender: #E3E0FA; --color-softlime: #E8F7C0; --color-sidebar: #232235; --radius-card: 20px; --space-inset: 12px; --space-control: 16px; --space-frame: 30px; font-family: 'DM Sans', sans-serif; color: var(--color-ink); background: var(--color-ground); font-synthesis: none; text-rendering: optimizeLegibility; }
 * { box-sizing: border-box; }
 body { margin: 0; min-width: 320px; min-height: 100vh; }
 button, input, select, textarea { font: inherit; }

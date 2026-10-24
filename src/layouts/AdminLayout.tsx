@@ -1,8 +1,8 @@
 import { NavLink, Outlet } from 'react-router-dom';
 
 export function AdminLayout() {
-  const linkClass = ({ isActive }: { isActive: boolean }) => `rounded-lg px-3 py-2 text-sm transition ${isActive ? 'bg-white/15 font-bold text-white' : 'text-white/75 hover:bg-white/10 hover:text-white'}`;
-  return <div className="min-h-screen bg-[#F4FAFA] md:flex">
+  const linkClass = ({ isActive }: { isActive: boolean }) => `rounded-full px-3 py-2 text-sm transition ${isActive ? 'bg-teal font-bold text-ink shadow-soft' : 'text-white/70 hover:bg-white/10 hover:text-white'}`;
+  return <div className="min-h-screen bg-ground md:flex">
     <aside className="bg-ink p-4 text-white md:min-h-screen md:w-[220px] md:shrink-0 md:px-5 md:py-6">
       <p className="mb-4 font-heading text-xl font-extrabold">◉ LaundryKu</p>
       <nav aria-label="Navigasi admin" className="flex gap-2 overflow-x-auto md:flex-col">
